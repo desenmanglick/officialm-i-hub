@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 杂志专题</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f9fc;
+      color: #1e2b32;
+      line-height: 1.7;
+    }
+
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.2rem 3rem;
+    }
+
+    /* 首页横幅 — 杂志风格大标题 */
+    .hero {
+      background: linear-gradient(145deg, #d9eee8 0%, #aad0c7 100%);
+      border-radius: 2.5rem 2.5rem 2rem 2rem;
+      padding: 3rem 2.5rem 4rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 12px 24px rgba(42, 87, 82, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -40px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(59, 139, 128, 0.10) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0f3d3c;
+      line-height: 1.15;
+      max-width: 800px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .chapeau {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: #2e6b63;
+      background: rgba(255,255,255,0.45);
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #1f4d47;
+      margin-top: 1.2rem;
+      max-width: 700px;
+      border-left: 4px solid #2c7a6e;
+      padding-left: 1.2rem;
+    }
+
+    /* 背景说明 —— 杂志引语区块 */
+    .background-note {
+      background: #ffffffdd;
+      backdrop-filter: blur(4px);
+      border-radius: 2rem;
+      padding: 2rem 2.2rem;
+      margin: 2.8rem 0;
+      box-shadow: 0 4px 12px rgba(0,30,28,0.04);
+      border: 1px solid #d6eae5;
+    }
+
+    .background-note h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #1b5b55;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .background-note h2 span {
+      background: #b7dbd3;
+      width: 8px;
+      height: 8px;
+      border-radius: 12px;
+      display: inline-block;
+    }
+
+    .background-note p {
+      color: #2d4743;
+      max-width: 780px;
+    }
+
+    /* 三段自然介绍 — 网格卡片 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin: 3rem 0 2.5rem;
+    }
+
+    .card-item {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 1.8rem 1.8rem 2.2rem;
+      box-shadow: 0 6px 18px rgba(31, 77, 71, 0.04);
+      border: 1px solid #d3e7e1;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+
+    .card-item:hover {
+      box-shadow: 0 14px 28px rgba(32, 88, 79, 0.07);
+      transform: translateY(-3px);
+    }
+
+    .card-item .card-icon {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .card-item h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #043f3a;
+      margin: 0.5rem 0 0.6rem;
+    }
+
+    .card-item p {
+      color: #2f5450;
+      font-size: 0.98rem;
+    }
+
+    .card-item .tag {
+      display: inline-block;
+      background: #e4f3ef;
+      color: #20665c;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      margin-top: 0.8rem;
+    }
+
+    /* 页尾访问提示 — 杂志脚注风格 */
+    .site-footer {
+      margin-top: 3.8rem;
+      padding: 2.2rem 2rem;
+      background: #eef6f3;
+      border-radius: 2.5rem;
+      text-align: center;
+      border: 1px solid #c9dfd8;
+    }
+
+    .site-footer p {
+      font-size: 1rem;
+      color: #2a5c55;
+      max-width: 650px;
+      margin: 0 auto 0.5rem;
+    }
+
+    .site-footer .visit-hint {
+      font-size: 0.95rem;
+      background: white;
+      display: inline-block;
+      padding: 0.5rem 1.8rem;
+      border-radius: 60px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      margin-top: 0.3rem;
+      border: 1px solid #b8d5cd;
+    }
+
+    .site-footer .visit-hint a {
+      color: #11574d;
+      text-decoration: none;
+      font-weight: 550;
+      border-bottom: 2px solid #57aa99;
+      padding-bottom: 0.1rem;
+    }
+
+    .site-footer .visit-hint a:hover {
+      background: #b9dfd4;
+      border-bottom-color: #11574d;
+    }
+
+    .faq-mini {
+      margin: 2.5rem 0 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      color: #11574d;
+      cursor: pointer;
+      padding: 0.5rem 1.2rem;
+      background: #e0f0ea;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      border: 1px solid #b9d5cc;
+      transition: background 0.15s;
+    }
+
+    .faq-mini summary:hover {
+      background: #cbe3db;
+    }
+
+    .faq-mini details {
+      flex: 1 1 260px;
+    }
+
+    .faq-mini details p {
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.8rem 0.4rem 1.2rem;
+      font-size: 0.9rem;
+      color: #2d5b54;
+      background: #f2faf7;
+      border-radius: 0 0 20px 20px;
+      border-left: 3px solid #479b8b;
+    }
+
+    /* 移动端适配 */
+    @media (max-width: 680px) {
+      .wrapper {
+        padding: 1rem 0.8rem 2rem;
+      }
+      .hero {
+        padding: 2rem 1.5rem 3rem;
+        border-radius: 2rem;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .background-note {
+        padding: 1.5rem;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .site-footer {
+        padding: 1.8rem 1rem;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .faq-mini details {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- 杂志首页横幅 -->
+    <header class="hero">
+      <div class="chapeau">✦ 专题 · 游戏与日常</div>
+      <h1>爱游戏，也爱那片<br>小小的数字绿洲</h1>
+      <p>从休闲一刻到沉浸探索——我们认真对待每一次屏幕里的相遇。</p>
+    </header>
+
+    <!-- 背景说明：从关键词展开 -->
+    <section class="background-note">
+      <h2><span></span> 关于「爱游戏」这一面</h2>
+      <p>「爱游戏」并不仅仅是一个入口，它更贴近一种态度：在快速迭代的娱乐方式中，保持对玩法、故事与交互的好奇。本页所指向的 <a href="https://officialm-i-game.com.cn" style="color: #166b60; text-decoration: underline; font-weight: 500;">爱游戏</a> 站点，正是围绕这种好奇搭建的信息集合——它未必喧哗，但力求将游戏的细节与趣味梳理清晰。</p>
+    </section>
+
+    <!-- 三段自然介绍 (卡片网格) -->
+    <div class="card-grid">
+      <article class="card-item">
+        <div class="card-icon">🎮</div>
+        <h3>探索的起点</h3>
+        <p>每一款作品都像一扇虚掩的门。我们整理背景、机制与风格，让玩家在接触前就能感受到它的气质。无论是独立小品还是大型制作，都值得被认真对待。</p>
+        <span class="tag">专题 · 视野</span>
+      </article>
+
+      <article class="card-item">
+        <div class="card-icon">🧩</div>
+        <h3>场景与日常</h3>
+        <p>通勤路上、午后小憩、周末晚间——游戏融入生活的缝隙。我们关注不同场景下的选择建议，让合适的内容出现在对的时间里，不打扰，但陪伴。</p>
+        <span class="tag">生活 · 节奏</span>
+      </article>
+
+      <article class="card-item">
+        <div class="card-icon">📋</div>
+        <h3>朴素的索引</h3>
+        <p>没有浮夸的排行榜，也没有紧迫的倒计时。这里更像一份安静整理的目录：按类型、主题或机制归类，方便你慢慢翻阅，找到合拍的那一个。</p>
+        <span class="tag">结构 · 清晰</span>
+      </article>
+    </div>
+
+    <!-- FAQ 摘要 — 轻量杂志脚注 -->
+    <div class="faq-mini">
+      <details>
+        <summary>这个网站主要提供什么？</summary>
+        <p>以游戏介绍与信息整理为主，侧重客观描述与分类索引，帮助玩家发现感兴趣的作品。</p>
+      </details>
+      <details>
+        <summary>内容更新频率如何？</summary>
+        <p>不定期更新，以专题或合集形式出现。不追求即时新闻，更在意内容扎实度。</p>
+      </details>
+      <details>
+        <summary>移动端体验友好吗？</summary>
+        <p>页面采用响应式设计，在手机与平板上均可流畅阅读，卡片布局自适应调整。</p>
+      </details>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <footer class="site-footer">
+      <p>如果你对游戏的多面性怀有同样的兴趣，不妨直接前往这个安静的信息角落。</p>
+      <div class="visit-hint">
+        <span>→ </span><a href="https://officialm-i-game.com.cn">爱游戏</a><span> ←</span>
+      </div>
+      <p style="margin-top: 1rem; font-size: 0.85rem; color: #3d6e66;"><em>杂志专题 · 编号 d746da9e83a4a2ef</em></p>
+    </footer>
+  </div>
+</body>
+</html>
