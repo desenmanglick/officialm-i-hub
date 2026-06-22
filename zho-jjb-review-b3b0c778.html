@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞技宝 · 简明指南与访问提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f6f0;
+            font-family: "Noto Serif SC", "Times New Roman", Georgia, serif;
+            color: #2d2a24;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .page-wrap {
+            max-width: 880px;
+            margin: 0 auto;
+            background-color: #fefcf8;
+            padding: 2.5rem 2.2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-left: 6px solid #b8926b;
+            padding-left: 1.2rem;
+            margin-bottom: 1.8rem;
+            color: #3e352b;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-top: 2.4rem;
+            margin-bottom: 1rem;
+            color: #4d4033;
+            border-bottom: 1px dashed #dacfbf;
+            padding-bottom: 0.4rem;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin: 1.6rem 0 0.8rem 0;
+            color: #5c4e3e;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        a {
+            color: #8b6f4e;
+            text-decoration: none;
+            border-bottom: 1px solid #dccbbc;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #4d3b2a;
+            border-bottom-color: #8b6f4e;
+        }
+
+        .intro-box {
+            background: #f3ede4;
+            padding: 1.6rem 2rem;
+            border-radius: 16px;
+            margin: 1.5rem 0 2rem 0;
+            font-size: 1rem;
+        }
+
+        .intro-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-note {
+            background: #fcf6ed;
+            border-left: 5px solid #b8926b;
+            padding: 1.2rem 1.6rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: normal;
+            color: #3f362c;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .highlight-note strong {
+            color: #6f563b;
+            font-weight: 600;
+        }
+
+        .grid-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.8rem 0;
+        }
+
+        .info-card {
+            background: #fbf9f4;
+            border: 1px solid #e6dbce;
+            padding: 1.2rem 1.4rem;
+            border-radius: 14px;
+            transition: background 0.2s;
+        }
+
+        .info-card:hover {
+            background: #f6efe6;
+        }
+
+        .info-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #5f4d37;
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.3px;
+        }
+
+        .info-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .faq-item {
+            margin: 1.4rem 0;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #efe6db;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #4d3d2b;
+            margin-bottom: 0.2rem;
+            font-size: 1.05rem;
+        }
+
+        .faq-a {
+            padding-left: 0.4rem;
+            color: #5a4e3f;
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 1.8rem 0 0.8rem 0;
+        }
+
+        .tag {
+            background: #ede6db;
+            color: #4d3d2b;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            letter-spacing: 0.3px;
+            border: 1px solid #dacfc0;
+        }
+
+        .footer-meta {
+            margin-top: 3rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e3d8ca;
+            font-size: 0.85rem;
+            color: #7b6d5c;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 700px) {
+            .page-wrap {
+                padding: 1.8rem 1.2rem;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+                padding-left: 0.8rem;
+            }
+
+            .grid-info {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-box {
+                padding: 1.2rem 1.2rem;
+            }
+
+            .highlight-note {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .page-wrap {
+                padding: 1.2rem 0.8rem;
+                border-radius: 12px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <h1>关于竞技宝 · 简明知识库</h1>
+
+    <div class="intro-box">
+        <p>本页面向对「竞技宝」感兴趣的用户提供一份轻量级知识入口。内容以指南片段、使用提醒与相关说明为主，帮助您在接触前建立基本认知框架。所有信息仅供一般参考，不构成任何形式的建议或承诺。</p>
+        <p>若您希望直接了解服务本身，可访问 <a href="https://zho-jjb.com">竞技宝</a> 获取更完整的介绍与动态。</p>
+    </div>
+
+    <!-- 指南区 -->
+    <h2>📘 简明指南</h2>
+    <p>在开始使用任何平台之前，了解其基本定位与操作逻辑有助于减少误解。竞技宝通常被归类为综合性互动平台，其核心功能围绕用户参与和内容聚合展开。新手用户可以参考以下几项基础原则：</p>
+
+    <div class="grid-info">
+        <div class="info-card">
+            <h4>熟悉界面结构</h4>
+            <p>初次进入时建议花几分钟浏览主要导航分区，注意区分信息展示区与互动操作区，避免误触非目标模块。</p>
+        </div>
+        <div class="info-card">
+            <h4>留意账户安全</h4>
+            <p>使用强密码并保持登录设备清洁。任何平台都不会通过非官方渠道索要密码或验证码。</p>
+        </div>
+        <div class="info-card">
+            <h4>功能模块概览</h4>
+            <p>竞技宝通常设有多个功能区域，如资讯、数据、社区互动等。明确各模块用途后按需使用。</p>
+        </div>
+        <div class="info-card">
+            <h4>关注官方通知</h4>
+            <p>规则、界面或功能可能随运营调整而变化。定期查看站内公告有助于掌握最新状态。</p>
+        </div>
+    </div>
+
+    <!-- 提醒区 -->
+    <h2>⚠️ 访问提醒</h2>
+    <div class="highlight-note">
+        <p><strong>• 辨别信息来源</strong> — 涉及操作或资金相关事宜，请务必以 <a href="https://zho-jjb.com">竞技宝</a> 官方渠道发布的内容为准。第三方描述可能存在滞后或偏差。</p>
+        <p><strong>• 理性预期</strong> — 任何平台都有其服务边界与适用场景。建议在充分了解后再做判断，避免因片面信息产生不切实际的期待。</p>
+        <p><strong>• 设备与网络</strong> — 使用稳定的网络环境，并保持浏览器或客户端为较新版本，以免出现兼容性提示。</p>
+    </div>
+
+    <!-- 相关信息区 -->
+    <h2>📌 相关信息</h2>
+    <p>以下列举与竞技宝相关的常见知识要点，内容经过梳理但并非详尽无遗。每条信息均基于公开可查的一般描述整理。</p>
+
+    <ul style="list-style-type: none; padding-left: 0.5rem; margin-bottom: 1.8rem;">
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #efe6db;">◈ 平台通常提供多语言界面，中文为主要支持语言之一。</li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #efe6db;">◈ 账户注册一般要求用户年满法定年龄并同意服务条款。</li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #efe6db;">◈ 内容与功能更新会通过官方公告或帮助中心发布。</li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #efe6db;">◈ 若遇到使用疑问，可先查阅常见问题区，再考虑其他支持途径。</li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px solid #efe6db;">◈ 不同地区用户可能面临不同的访问条件，建议自行核实。</li>
+    </ul>
+
+    <!-- FAQ 摘要 -->
+    <h2>❓ 常见问题摘要</h2>
+
+    <div class="faq-item">
+        <div class="faq-q">Q：竞技宝是做什么的？</div>
+        <div class="faq-a">A：竞技宝是一个提供信息聚合与用户互动功能的综合性平台，涵盖资讯、数据展示及社区交流等方向。具体内容随版本迭代有所变化。</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q：如何判断自己是否适合使用？</div>
+        <div class="faq-a">A：建议先浏览平台公开的帮助文档或介绍页，了解其基本功能与规则。若与个人需求或兴趣相符，可以进一步体验。</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q：遇到问题该如何处理？</div>
+        <div class="faq-a">A：首先查看站内帮助或FAQ板块，多数常见问题都有说明。若仍未解决，可通过官方提供的联系方式进行咨询。</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Q：信息更新频率如何？</div>
+        <div class="faq-a">A：平台会根据运营需要不定期调整内容与功能。直接访问 <a href="https://zho-jjb.com">竞技宝</a> 可获取当前最新的信息和公告。</div>
+    </div>
+
+    <!-- 标签与元信息 -->
+    <div class="tag-row">
+        <span class="tag">知识库</span>
+        <span class="tag">指南</span>
+        <span class="tag">访问提醒</span>
+        <span class="tag">竞技宝</span>
+    </div>
+
+    <div class="footer-meta">
+        <span>本页内容仅供一般知识参考</span>
+        <span>最后整理 · 2025</span>
+    </div>
+
+</div>
+</body>
+</html>
